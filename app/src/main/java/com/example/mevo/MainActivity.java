@@ -10,12 +10,8 @@ import com.mapbox.mapboxsdk.constants.Style;
 import com.mapbox.mapboxsdk.maps.MapView;
 
 public class MainActivity extends AppCompatActivity {
-
-
     private MapView mapView;
     String secretKey = BuildConfig.MY_KEY;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

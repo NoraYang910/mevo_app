@@ -23,7 +23,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            buildConfigField("String", "MY_KEY", (project.findProperty("MAPBOX_DOWNLOADS_TOKEN") ?: "\"default_value\"").toString())
+            buildConfigField("String", "MY_KEY", (project.findProperty("MAPBOX_DOWNLOADS_TOKEN")
+                    ?: "\"default_value\"").toString())
         }
         debug {
             buildConfigField("String", "MY_KEY", (project.findProperty("MAPBOX_DOWNLOADS_TOKEN") ?: "\"default_value\"").toString())
