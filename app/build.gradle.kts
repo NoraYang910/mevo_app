@@ -6,6 +6,9 @@ android {
     namespace = "com.example.mevo"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId = "com.example.mevo"
         minSdk = 30
@@ -20,6 +23,10 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            buildConfigField("String", "MY_KEY", (project.findProperty("MAPBOX_DOWNLOADS_TOKEN") ?: "\"default_value\"").toString())
+        }
+        debug {
+            buildConfigField("String", "MY_KEY", (project.findProperty("MAPBOX_DOWNLOADS_TOKEN") ?: "\"default_value\"").toString())
         }
     }
     compileOptions {

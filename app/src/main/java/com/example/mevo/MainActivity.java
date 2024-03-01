@@ -13,13 +13,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private MapView mapView;
+    String secretKey = BuildConfig.MY_KEY;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Set your Mapbox access token
-        Mapbox.getInstance(this, "sk.eyJ1Ijoibm9yYTkxMCIsImEiOiJjbHQ3cm12M2swbzdxMmptZ3g5M28zN3k4In0.EnlUeQZMK3roBy2QPVpBIA");
+        Mapbox.getInstance(this, secretKey);
 
         setContentView(R.layout.activity_main);
 
